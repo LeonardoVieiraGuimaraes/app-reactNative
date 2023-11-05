@@ -1,0 +1,36 @@
+npx create-expo-app my-app
+yarn add nativewind ou npm install
+yarn add --dev tailwindcss ou npm install --save-dev
+npm i postcss      
+
+// tailwind.config.js
+// babel.config.js
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: ["babel-preset-expo"],
++   plugins: ["nativewind/babel"],
+  };
+};
+
+
+module.exports = {
+- content: [],
++ content: ["./App.{js,jsx,ts,tsx}", "./<custom directory>/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+npx tailwindcss init -p
+
+
+npm start -- --reset-cache       # reset chaceh
+npm install                      # instala dependencias
+npm outdated                     # verifica dependências que possuem atualização
+npm update                       # atualiza dependências
+npm install                      # instala dependências
+npx expo start                   # started
+npx depcheck			# Verificar Depedências não usadas
+npx expo start --clear		#Inicia limpando o cache
